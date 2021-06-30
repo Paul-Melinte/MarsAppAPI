@@ -21,8 +21,8 @@ roversRouter.get("/photos", (req, res) => {
 
 
 // Endpoint hardcoded for sol
-roversRouter.get("/:roverNam/photos/:cameraName", (req, res) => {
-    const photosGetRes = axios.get(apiUrlNASA + `/rovers/${req.params.roverNam}/photos?sol=100&camera=${req.params.cameraName}&` + apiKey)
+roversRouter.get("/:roverName/photos/:cameraName", (req, res) => {
+    const photosGetRes = axios.get(apiUrlNASA + `/rovers/${req.params.roverName}/photos?sol=100&camera=${req.params.cameraName}&` + apiKey)
         .then(response => res.send(trimPhotoData(response.data.photos)))
         .catch(err => console.log(err));
 });
