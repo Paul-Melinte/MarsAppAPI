@@ -1,7 +1,7 @@
 import express from "express";
 import axios from "axios";
 import { apiKey, apiUrlNASA } from "../apiConsts";
-import { trimPhotoData } from "./photoData";
+import { trimPhotoData } from "../photos/photoData";
 
 export const roversRouter = express.Router();
 
