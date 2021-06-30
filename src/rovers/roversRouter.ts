@@ -1,9 +1,8 @@
 import express from "express";
 import axios from "axios";
 import { cameraTypes } from "./cameraTypes";
-
-const apiKey = 'api_key=6xr9QIaOXNnYO0KLwLTfgUZSdH2gpuni7VOTAZYt';
-const apiUrlNASA = 'https://api.nasa.gov/mars-photos/api/v1';
+import { apiKey, apiUrlNASA } from "../apiConsts";
+ 
 
 export const roversRouter = express.Router();
 
