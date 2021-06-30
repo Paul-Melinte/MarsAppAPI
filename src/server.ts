@@ -7,7 +7,7 @@ const port = 8000;
 app.use(express.json());
 
 const router = express.Router();
-router.use('/rovers',roversRouter);
+router.use('/rovers', roversRouter);
 
 app.use('/api', router);
  
