@@ -1,7 +1,9 @@
 import express from "express";
 import axios from "axios";
 import { apiKey, apiUrlNASA } from "../apiConsts";
-import { trimPhotoData } from "../photos/photoData";
+import { trimPhotoData } from "../photos/trimmedPhotoData";
+import { cameraTypes } from "../photos/cameraTypes";
+
 
 export const roversRouter = express.Router();
 
@@ -14,7 +16,7 @@ roversRouter.get("/", (req, res) => {
 
 // Endpoint hardcoded for specific sol, rover, and camera
 roversRouter.get("/photos", (req, res) => {
-    const photosGetRes = axios.get(apiUrlNASA + "/rovers/curiosity/photos?sol=100&camera=FHAZ&" + apiKey)
+    const photosGetRes = axios.get(apiUrlNASA + `/rovers/curiosity/photos?sol=100&camera=${cameraTypes.FHAZ}&` + apiKey)
         .then(response => res.send(trimPhotoData(response.data.photos)))
         .catch(err => console.log(err));
 });
