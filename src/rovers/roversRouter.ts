@@ -4,6 +4,7 @@ import { apiKey, apiUrlNASA } from "../apiConsts";
 import { trimPhotoData } from "../photos/trimmedPhotoData";
 import { cameraTypes } from "../photos/cameraTypes";
 
+
 export const roversRouter = express.Router();
 
 // Endpoint for rover data
